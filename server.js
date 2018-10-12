@@ -64,6 +64,16 @@ app.use(
 );
 
 strategy(passport);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Set global vars
+app.use((req, res, next) => {
+  res.locals.user = req.user || null;
+  next();
+});
+
 //require the routes we have created
 const root = require("./routes/index");
 const about = require("./routes/about");
