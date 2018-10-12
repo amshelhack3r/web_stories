@@ -14,9 +14,9 @@ router.get(
   passport.authenticate("google", {
     failureRedirect: "/login"
   }),
-  function(req, res) {
-    // Successful authentication, redirect home.
-    res.redirect("/dashboard");
+  (req, res) => {
+    // // Successful authentication, redirect home.
+    res.redirect("/");
   }
 );
 
@@ -98,7 +98,7 @@ router.post("/login", (req, res, next) => {
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/users/login");
+  res.redirect("/");
 });
 
 module.exports = router;
