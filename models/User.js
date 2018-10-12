@@ -7,7 +7,12 @@ const UserModel = new Schema({
     required: true
   },
 
-  name: {
+  firstName: {
+    type: String,
+    required: true
+  },
+
+  lastName: {
     type: String,
     required: true
   },
@@ -17,13 +22,11 @@ const UserModel = new Schema({
   },
 
   password: {
-    type: String,
-    required: true
+    type: String
   },
 
   avatar: {
-    type: String,
-    required: true
+    type: String
   }
 });
 

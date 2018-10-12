@@ -13,25 +13,30 @@ module.exports = passport => {
         callbackURL: keys.google_auth.callback
       },
       (accessToken, refreshToken, profile, done) => {
-        User.findOne({ uid: profile.id }).then(user => {
-          if (user) {
-            done(null, user);
-          } else {
-            //remove the sive limitation
-            const image = profile.photos[0].value.substring(
-              0,
-              profile.photos[0].value.indexOf("?")
-            );
-            new User({
-              uid: profile.id,
-              name: profile.displayName,
-              email: profile.emails[0].value,
-              avatar: image
-            })
-              .save()
-              .then(user => done(null, user));
-          }
-        });
+        User.findOne({ uid: profile.id })
+          .then(user => {
+            if (user) {
+              done(null, user);
+            } else {
+              //remove the sive limitation
+              const image = profile.photos[0].value.substring(
+                0,
+                profile.photos[0].value.indexOf("?")
+              );
+              new User({
+                uid: profile.id,
+                firstName: profile.name.givenName,
+                lastName: profile.name.familyName,
+                email: profile.emails[0].value,
+                avatar: image
+              })
+                .save()
+                .then(user => done(null, user));
+            }
+          })
+          .catch(err => {
+            console.log(err);
+          });
       }
     )
   );
