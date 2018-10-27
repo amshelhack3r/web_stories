@@ -31,14 +31,14 @@ const StoryModel = new Schema({
   },
   comments: [
     {
-      body: {
+      commentBody: {
         type: String
       },
-      user: {
+      commentUser: {
         type: Schema.Types.ObjectId,
         ref: "users"
       },
-      date: {
+      commentDate: {
         type: Date,
         default: Date.now()
       }
