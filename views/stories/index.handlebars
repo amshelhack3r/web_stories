@@ -8,10 +8,10 @@
             </div>
             <div class="card-content center-align">
                 <h5>{{title}}</h5>
-                <p class="story-text">{{body}}</p>
+                <p class="story-text">{{stripTags (truncate body 150)}}</p>
                 <br>
                 <div class="chip">
-                    <img src="{{user.image}}">
+                    <img src="{{user.avatar}}">
                     <a href="/stories/user/{{user.id}}">{{user.firstName}} {{user.lastName}}</a>
                 </div>
             </div>

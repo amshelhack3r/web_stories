@@ -28,10 +28,10 @@
                 <li>
                     <div class="user-view">
                         <div class="background">
-                            <img src="images/abstract.jpg">
+                            <img src="images/abstract.jpg" alt="abstract">
                         </div>
                         <a href="#user">
-                            <img class="circle" src="images/avatar.png">
+                            <img class="circle" src="{{user.avatar}}">
                         </a>
                         <a href="#name">
                             <span class="white-text name">{{user.name}}</span>
@@ -54,11 +54,6 @@
                         <i class="fa fa-sign-out"></i> Logout</a>
                 </li>
                 {{else}}
-                <li>
-                    <a class="btn grey darken-1" href="/auth/register">
-                        <i class="fa fa-sign-in"></i> Sign Up</a>
-                </li>
-                <li class="divider"></li>
                 <li>
                     <a class="btn red darken-1" href="/auth/google">
                         <i class="fa fa-google left"></i> Login With Google</a>
