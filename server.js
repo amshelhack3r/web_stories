@@ -9,6 +9,8 @@ const strategy = require("./config/passport");
 const session = require("express-session");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
+//bring in the handlebars helpers
+const { truncate, stripTags, formatDate, editIcon } = require("./helpers/hbs");
 
 const app = express();
 
@@ -34,6 +36,12 @@ mongoose
 app.engine(
   "handlebars",
   exphbs({
+    helpers: {
+      truncate,
+      stripTags,
+      formatDate,
+      editIcon
+    },
     defaultLayout: "template"
   })
 );
