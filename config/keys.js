@@ -12,6 +12,6 @@ module.exports = {
     clientSecret: "SOudHl0ifDex1wDpYBpOtzEj",
     callback: "/auth/callback"
   },
-  mlabURI: "mongodb://amshel:xanthosis1@ds155130.mlab.com:55130/stories",
+  mlabURI: "mongodb://amshel:apemonkey1@ds155130.mlab.com:55130/stories",
   secret: "this is steve"
 };
