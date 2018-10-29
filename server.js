@@ -88,10 +88,10 @@ const about = require("./routes/about");
 const stories = require("./routes/stories");
 const auth = require("./routes/auth");
 
-app.use("/", root);
-app.use("/about", about);
-app.use("/stories", stories);
-app.use("/auth", auth);
+app.use("/dev_stories", root);
+app.use("/dev_stories/about", about);
+app.use("/dev_stories/stories", stories);
+app.use("/dev_stories/auth", auth);
 
 const port = process.env.PORT || 3000;
 
