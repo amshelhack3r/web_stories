@@ -12,17 +12,17 @@ router.get(
 router.get(
   "/callback",
   passport.authenticate("google", {
-    failureRedirect: "/login"
+    failureRedirect: "/dev_stories/auth/google"
   }),
   (req, res) => {
     // // Successful authentication, redirect home.
-    res.redirect("/dashboard");
+    res.redirect("/dev_stories/dashboard");
   }
 );
 
 router.get("/logout", (req, res) => {
   req.logout();
-  res.redirect("/");
+  res.redirect("/dev_stories");
 });
 
 module.exports = router;

@@ -42,7 +42,7 @@ router.post("/add", ensureAuthenticated, (req, res) => {
   };
 
   new Story(story).save().then(story => {
-    res.redirect("/stories");
+    res.redirect("/dev_stories/stories");
   });
 });
 
@@ -80,12 +80,12 @@ router.put("/edit/:id", ensureAuthenticated, (req, res) => {
   };
 
   Story.findByIdAndUpdate(req.params.id, story).then(() => {
-    res.redirect("/dashboard");
+    res.redirect("/dev_stories/dashboard");
   });
 });
 router.delete("/delete/:id", ensureAuthenticated, (req, res) => {
   Story.findByIdAndRemove(req.params.id).then(() => {
-    res.redirect("/dashboard");
+    res.redirect("/dev_stories/dashboard");
   });
 });
 
@@ -101,7 +101,7 @@ router.post("/comment/:id", ensureAuthenticated, (req, res) => {
       story.comments.unshift(newComment);
 
       story.save().then(story => {
-        res.redirect(`/stories/show/${story.id}`);
+        res.redirect(`/dev_stories/stories/show/${story.id}`);
       });
     })
     .catch(err => {

@@ -3,11 +3,11 @@ module.exports = {
     if (req.isAuthenticated()) {
       return next();
     }
-    res.redirect("/");
+    res.redirect("/dev_stories");
   },
   ensureGuest: (req, res, next) => {
     if (req.isAuthenticated()) {
-      res.redirect("/dashboard");
+      res.redirect("/dev_stories/dashboard");
     } else {
       return next();
     }
