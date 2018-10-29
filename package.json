@@ -4,7 +4,7 @@
   "description": "stories written in nodejs",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon run server"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
