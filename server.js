@@ -20,6 +20,8 @@ const {
 
 const app = express();
 
+//set a global variable root path
+global.rootpath = rootpath;
 //connect to mong db
 
 mongoose
@@ -86,6 +88,7 @@ app.use(passport.session());
 // Set global vars
 app.use((req, res, next) => {
   res.locals.user = req.user || null;
+  res.locals.path = rootpath;
   next();
 });
 
@@ -95,10 +98,10 @@ const about = require("./routes/about");
 const stories = require("./routes/stories");
 const auth = require("./routes/auth");
 
-app.use(`${rootpath}/dev_stories`, root);
-app.use(`${rootpath}/dev_stories/about`, about);
-app.use(`${rootpath}/dev_stories/stories`, stories);
-app.use(`${rootpath}/dev_stories/auth`, auth);
+app.use(`${rootpath}`, root);
+app.use(`${rootpath}/about`, about);
+app.use(`${rootpath}/stories`, stories);
+app.use(`${rootpath}/auth`, auth);
 
 const port = process.env.PORT || 3000;
 

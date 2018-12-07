@@ -34,5 +34,5 @@ module.exports = {
     }
   },
 
-  rootpath: "/node_projects"
+  rootpath: "/node_projects/dev_stories"
 };

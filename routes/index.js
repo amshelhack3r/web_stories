@@ -5,6 +5,7 @@ const { ensureAuthenticated, ensureGuest } = require("../helpers/auth");
 
 /* GET home page. */
 router.get("/", (req, res) => {
+  console.log(rootpath);
   res.render("index");
 });
 
