@@ -7,7 +7,7 @@ module.exports = passport => {
       {
         clientID: keys.google_auth.clientID,
         clientSecret: keys.google_auth.clientSecret,
-        callbackURL: keys.google_auth.callback
+        callbackURL: `${rootpath}/auth/callback`
       },
       (accessToken, refreshToken, profile, done) => {
         User.findOne({ uid: profile.id })
