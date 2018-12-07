@@ -15,7 +15,7 @@
                 <img src="{{story.user.avatar}}" class="circle responsive-img">
             </div>
             <div class="card-action">
-                <a href="/stories/user/{{story.user.id}}">More From {{story.user.firstName}}</a>
+                <a href="{{rootpath}}/stories/user/{{story.user.id}}">More From {{story.user.firstName}}</a>
             </div>
         </div>
     </div>
@@ -35,7 +35,7 @@
         </form>
         {{else}}
         <p>Please
-            <a href="/dev_stories/auth/google">log</a> in to leave a comment</p>
+            <a href="{{rootpath}}/dev_stories/auth/google">log</a> in to leave a comment</p>
         {{/if}}
     </div>
 </div>
@@ -46,7 +46,7 @@
         <h5>{{commentBody}}</h5>
         <div class="chip">
             <img src="{{commentUser.avatar}}">
-            <a href="/stories/user/{{commentUser.id}}">
+            <a href="{{rootpath}}/stories/user/{{commentUser.id}}">
                 {{commentUser.firstName}} {{commentUser.lastName}}
             </a>
         </div>

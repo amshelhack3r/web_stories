@@ -1,7 +1,7 @@
 <nav class="grey darken-3">
     <div class="container">
         <div class="nav-wrapper">
-            <a href="/dev_stories" class="brand-logo center">Dev Stories</a>
+            <a href="{{rootpath}}/dev_stories" class="brand-logo center">Dev Stories</a>
             <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
                 <i class="fa fa-bars"></i>
             </a>
@@ -9,20 +9,20 @@
             <ul class="right hide-on-small-only">
                 {{#if user}}
                 <li>
-                    <a href="/dev_stories/dashboard">Welcome {{user.firstName}}</a>
+                    <a href="{{rootpath}}/dev_stories/dashboard">Welcome {{user.firstName}}</a>
                 </li>
                 <li>
-                    <a href="/dev_stories/auth/logout">
+                    <a href="{{rootpath}}/dev_stories/auth/logout">
                         <i class="fa fa-sign-out"></i> Logout</a>
                 </li>
                 {{else}}
                 <li>
-                    <a href="/dev_stories/stories">
+                    <a href="{{rootpath}}/dev_stories/stories">
                         <i class="fa fa-book"></i> Public Stories</a>
                 </li>
                 {{/if}}
                 <li>
-                    <a href="/dev_stories/about">
+                    <a href="{{rootpath}}/dev_stories/about">
                         <i class="fa fa-book"></i> About</a>
                 </li>
                 <li>
@@ -50,27 +50,27 @@
                     </div>
                 </li>
                 <li>
-                    <a href="/dev_stories/dashboard">
+                    <a href="{{rootpath}}/dev_stories/dashboard">
                         <i class="fa fa-cog"></i> Dashboard</a>
                 </li>
                 <li>
-                    <a href="/dev_stories/stories/my">
+                    <a href="{{rootpath}}/dev_stories/stories/my">
                         <i class="fa fa-user"></i> My Stories</a>
                 </li>
                 <li>
-                    <a href="/dev_stories/auth/logout">
+                    <a href="{{rootpath}}/dev_stories/auth/logout">
                         <i class="fa fa-sign-out"></i> Logout</a>
                 </li>
                 {{else}}
                 <li>
-                    <a class="btn red darken-1" href="/dev_stories/auth/google">
+                    <a class="btn red darken-1" href="{{rootpath}}/dev_stories/auth/google">
                         <i class="fa fa-google left"></i> Login With Google</a>
                 </li>
 
                 <li class="divider"></li>
                 {{/if}}
                 <li>
-                    <a href="/dev_stories/stories">
+                    <a href="{{rootpath}}/dev_stories/stories">
                         <i class="fa fa-book"></i> Public Stories</a>
                 </li>
 

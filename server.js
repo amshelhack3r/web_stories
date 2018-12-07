@@ -10,7 +10,13 @@ const session = require("express-session");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 //bring in the handlebars helpers
-const { truncate, stripTags, formatDate, editIcon } = require("./helpers/hbs");
+const {
+  truncate,
+  stripTags,
+  formatDate,
+  editIcon,
+  rootpath
+} = require("./helpers/hbs");
 
 const app = express();
 
@@ -40,7 +46,8 @@ app.engine(
       truncate,
       stripTags,
       formatDate,
-      editIcon
+      editIcon,
+      rootpath
     },
     defaultLayout: "template"
   })
@@ -88,10 +95,10 @@ const about = require("./routes/about");
 const stories = require("./routes/stories");
 const auth = require("./routes/auth");
 
-app.use("/dev_stories", root);
-app.use("/dev_stories/about", about);
-app.use("/dev_stories/stories", stories);
-app.use("/dev_stories/auth", auth);
+app.use(`${rootpath}/dev_stories`, root);
+app.use(`${rootpath}/dev_stories/about`, about);
+app.use(`${rootpath}/dev_stories/stories`, stories);
+app.use(`${rootpath}/dev_stories/auth`, auth);
 
 const port = process.env.PORT || 3000;
 
