@@ -14,14 +14,15 @@
         {{#each stories}}
         <tr>
             <td>
-                <a href="/stories/show/{{id}}">{{title}}</a>
+                <a href="
+                {{rootpath}}stories/show/{{id}}">{{title}}</a>
             </td>
             <td>{{formatDate published_on 'MMMM do YYYY'}}</td>
             <td>
                 <span class="dash-status">{{status}}</span>
             </td>
             <td>
-                <a class="btn left-align" href="/stories/edit/{{id}}">
+                <a class="btn left-align" href="{{rootpath}}/stories/edit/{{id}}">
                     <i class="fa fa-pencil"></i> Edit</a>
 
                 <form action="/stories/delete/{{id}}?_method=DELETE" method="post" id="delete-form">
